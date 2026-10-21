@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10b981">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Gym 記錄">
+<title>Gym 記錄</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Gym 記錄</h1>
+  <button class="icon-btn" id="settingsBtn" aria-label="設定同備份">⚙︎</button>
+</header>
+<main>
+  <p class="date-line" id="todayDate"></p>
+  <div class="cards three">
+    <div class="card stat"><div class="stat-label">本週訓練</div><div class="stat-value" id="wSessions">0</div><div class="stat-sub">次</div></div>
+    <div class="card stat"><div class="stat-label">總組數</div><div class="stat-value" id="wSets">0</div><div class="stat-sub">組</div></div>
+    <div class="card stat"><div class="stat-label">訓練量</div><div class="stat-value" id="wVol">0</div><div class="stat-sub">kg</div></div>
+  </div>
+  <div class="card"><h2>近 7 日訓練量（kg × 次）</h2><div class="chart" id="chartVol"></div></div>
+  <h2 class="section-h">訓練記錄</h2>
+  <div id="sessionList"></div>
+</main>
+<button class="fab" id="addBtn">＋ 新訓練</button>
+
+<div class="sheet-backdrop" id="sheet" hidden>
+  <div class="sheet" role="dialog" aria-modal="true">
+    <div class="sheet-head"><h2 id="sheetTitle"></h2><button class="icon-btn" id="sheetClose" aria-label="關閉">✕</button></div>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
